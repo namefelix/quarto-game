@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quarto</title>
+	<meta charset="UTF-8" >
+	<link rel="stylesheet" type="text/css" href="">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="Game.js"></script>
+	<script type="text/javascript" src="AI.js"></script>
+	
+	<style>
+		body{
+			font-family: Helvetica, Arial, 'LiHei Pro', '微軟正黑體',
+'新細明體', sans-serif;
+			text-align: center;
+		}
+		td{
+			border: solid 1px black;
+			width: 100px;
+			height: 100px;
+		}
+		td.marked
+		{
+			background-color: #BEFF8F;
+		}
+		td.selected{
+			background-color: #94D1FF;
+		}
+		#board{
+			float: left;
+			width: 450px;
+		}
+		#help{
+			width: 100%;
+			float: left;
+			margin: 10px auto;
+		}
+		#hold{
+			border: solid 3px blue;
+			width: 100px;
+			height: 100px;
+		}
+		#hold img{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		#main{
+			margin: 0 auto;
+		}
+		#pool{
+			border: solid 1px black;
+			height: 250px;
+		}
+		#side{
+			float:left;
+			width: 700px;
+		}
+		.goodstate{
+			border: solid 3px Green;
+			background-color: #BEFF8F;
+		}
+		.medium
+		{
+			border: solid 3px yellow;
+			background-color: #FFF79E;
+		}
+		.waring{
+			border: solid 3px red;
+			background-color: #FFA1B8;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<div id="messages">
+		<p id="war1" class="goodstate" style="display: none;">network connected...</p>
+		<p id="war2" class="waring">Check your network connection and the Game.js file if you are seeing this text.</p>
+		<p id="war3" class="waring">Check your network connection and the AI.js file if you are seeing this text.</p>
+		<p id="decision" class="medium" style="display: none;">AI is making a decision...</p>
+		<p id="winning" class="goodstate" style="display: none;"></p>
+	</div>
+	<div id="start" style="display: none;">
+		<p>Would you like to be the first player or the second player?</p>
+		<p id="first_player">First player</p>
+		<p id="second_player">Second player</p>
+	</div>
+	<div id="main">
+		<div id="board">
+			<table>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<br>
+			<button id="reset">Start Game / Reset</button>
+		</div>
+		<div id="side">
+			<div id="hold"></div>
+			<div id="pool"></div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div id="help" class="medium">
+		<p>
+			Rules can be found at <a target="_blank" href="https://en.wikipedia.org/wiki/Quarto_(board_game)">wikipedia page</a>
+		</p>
+	</div>
+</body>
+<script type="text/javascript">
+	$('#war1').show(); //waring resolve
+</script>
+</html>
