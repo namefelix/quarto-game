@@ -1,2 +1,3 @@
 # quarto-game
-a Quarto game written in js, with AI implementation
+A Quarto game written in js, with AI implementation.
+This is the final assignment of the 2020 "Artificial Intelligence" class.
